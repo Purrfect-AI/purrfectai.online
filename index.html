@@ -1,0 +1,101 @@
+tml lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .module {
+            margin: 10px 0;
+        }
+        .module button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .module button:hover {
+            background-color: #555;
+        }
+        .module .content {
+            display: none;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temario</h1>
+        
+        <div class="module">
+            <button onclick="toggleContent(1)">Módulo 1: Autograd</button>
+            <div id="content-1" class="content">
+                <p>Descripción del Módulo 1: Aprenderás sobre autograd, una herramienta para cálculo automático de derivadas.</p>
+            </div>
+        </div>
+
+        <div class="module">
+            <button onclick="toggleContent(2)">Módulo 2: MyNN</button>
+            <div id="content-2" class="content">
+                <p>Descripción del Módulo 2: Crea tu propia red neuronal desde cero.</p>
+            </div>
+        </div>
+
+        <div class="module">
+            <button onclick="toggleContent(3)">Módulo 3: Makemore y bi-gramas</button>
+            <div id="content-3" class="content">
+                <p>Descripción del Módulo 3: Aprende sobre modelos basados en bi-gramas y cómo generar texto.</p>
+            </div>
+        </div>
+
+        <div class="module">
+            <button onclick="toggleContent(4)">Módulo 4: Más makemore y MLPs</button>
+            <div id="content-4" class="content">
+                <p>Descripción del Módulo 4: Explora perceptrones multicapa (MLPs) y su uso en modelos generativos.</p>
+            </div>
+        </div>
+
+        <div class="module">
+            <button onclick="toggleContent(5)">Módulo 5: Todavía más makemore (ResNet50)</button>
+            <div id="content-5" class="content">
+                <p>Descripción del Módulo 5: Implementa una ResNet50 y aplica técnicas avanzadas de generación.</p>
+            </div>
+        </div>
+
+        <!-- Agrega más módulos según sea necesario -->
+
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(`content-${id}`);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
