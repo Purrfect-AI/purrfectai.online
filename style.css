@@ -162,6 +162,7 @@ body {
     display: flex; /* Para la flecha */
     justify-content: space-between; /* Para la flecha */
     align-items: center; /* Para la flecha */
+    font-size: 20px;
 }
 
 .module-description {
