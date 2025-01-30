@@ -1,142 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temario</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .module {
-            margin: 10px 0;
-        }
-        .module button {
-            width: 40%;
-            padding: 10px;
-            background-image: url('images/button_background.png');
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-align: left;
-            font-size: 16px;
-	    font-weight: bold;
-            cursor: pointer;
-        }
-        .module button:hover {
-            background-color: #555;
-        }
-        .module .content {
-            display: none;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-    </style>
+    <title>Purrfect AI</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-	    <h1>Nociones de Deep Learning para Inteligencia Artificial Generativa de Texto - <i>en castellano.</i></h1>
-        <h2>Temario</h2>
-        
-        <div class="module">
-            <button onclick="toggleContent(1)">Módulo 1: Autograd</button>
-            <div id="content-1" class="content">
-                <p>Te explicamos qué es y te mostramos cómo implementar un motor de cálculo de gradientes automático (MichiGrad) para entrenar redes neuronales en Python pelado (unas 200 líneas, con comentarios). Te explicamos qué es y cómo hacer Backpropagation a mano, y cómo automatizarlo. Refrescaremos algunos conceptos matemáticos básicos cómo los de función diferenciable, derivadas parciales y regla de la cadena. Introduciremos conceptos cómo descenso por gradientes y función de perdida (loss function). Este módulo insume alrededor de 1,5 horas para ver la clase + otras 1,5 horas para resolver los ejercicios.
-		</p>
-            </div>
+    <div class="container-g">
+        <div class="container">
+            <div class="title">
+                <h1>Nociones de Deep Learning para Inteligencia Artificial Generativa de Texto</h1>
+                
+                <div class="info-rrss"> 
+                    <div class="personal-info">
+                        <img src="images/jj_linkedin_profile.jpg" alt="Profile Imagen" class="profile-image">
+                        <div class="text">
+                            <span class="name">Joaquín Bogado</span><br>
+                            <span class="description">Doctor en Ciencias Informáticas<br>Experto en IA Generativa</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>  
         </div>
-
-        <div class="module">
-            <button onclick="toggleContent(2)">Módulo 2: MyNN</button>
-            <div id="content-2" class="content">
-                <p>Te guiamos para que implementes tu propia librería de Redes Neuronales (Neural Networks o NN), desde una simple neurona (Perceptron), pasando por una capa de neuronas (Layer) y finalmente varias capas de neuronas (Multi Layer Perceptron o MLP). Además introducimos a las funciones de activación, en particular a la tangente hiperbólica (tanh) y la unidad lineal regularizada (Regularized Linear Unit o ReLU), entre otras. Este módulo insume unas 1,5 horas para ver la clase + 1 hora para resolver los ejercicios.
-		</p>
-            </div>
-        </div>
-
-        <div class="module">
-            <button onclick="toggleContent(3)">Módulo 3: Makemore y bi-gramas</button>
-            <div id="content-3" class="content">
-                <p>Te explicamos qué es un modelo auto-regresivo estadístico de bi-gramas y te enseñamos a implementar uno. Estos modelos se asemejan mucho a los GPTs en cuanto a su forma de generar texto. Este modelo nos ayudará a introducir los conceptos de función logarítmica negativa de verosimilitud (Negative Log Likelihood) para medir la eficiencia de un modelo de lenguajes, logits, softmax, one-hot enconding, y a algunas nociones de PyTorch para realizar operaciones de cálculo de gradientes en grafos de operaciones de manera vectorizada (como en PequeGrad, pero en serio y de manera eficiente). Además, re-implementaremos el modelo de bi-gramas con una red neuronal de una capa y veremos que este enfoque nos permite generalizar fácilmente a tri-gramas, cuatri-gramas y n-gramas. Este módulo insume unas 3,5 horas para ver las clases + 2 horas para resolver los ejercicios.
-		</p>
-            </div>
-        </div>
-
-        <div class="module">
-            <button onclick="toggleContent(4)">Módulo 4: Más makemore y MLPs</button>
-            <div id="content-4" class="content">
-                <p>Nos ponemos más serios respecto a los modelos de lenguajes e implementamos el modelo del paper "A Neural Probabilistic Language Model" de Bengio et al pero a nivel de caracteres en lugar de palabras. Introducimos el concepto de Embeddings y nos adentramos más en las funcionalidades que ofrece PyTorch para trabajar con modelos de redes neuronales. Vamos a fondo con perceptrones multi capa y mostramos los principales problemas de entrenar redes neuronales con multiples capas. Vemos el concepto de taza de aprendizaje (Learning Rate) e hiperparámetros y justificamos la necesidad de dividir el conjunto datos en datos de entrenamiento, validación y pruebas (train/validation/test splitting). Este módulo insume unas 1,5 horas para ver la clase + 1 hora para resolver los ejercicios.
-		</p>
-            </div>
-        </div>
-
-        <div class="module">
-            <button onclick="toggleContent(5)">Módulo 5: Todavía más makemore (ResNet50)</button>
-            <div id="content-5" class="content">
-                <p>Introducimos el problema de la desaparición y la explosión de los gradientes en redes neuronales con multiples capas y su solución mediante técnicas especiales de inicialización de las matrices de peso (Kaiming Init) y más en general, mediante la implementación de normalización por lotes (Batch Normalization). Veremos en detalle como visualizar y detectar este problema mediante gráficos de saturación de neuronas. Además aplicamos esto para entender como funciona la arquitectura de ResNet50, un modelo revolucionario en su momento por el uso de residuos, por su profundidad (más de 50 capas) y cuyo entrenamiento solo es posible mediante el uso de capas de normalización. Este módulo insume unas 1,5 horas para ver la clase + 2,5 horas para resolver los ejercicios.
-		</p>
-            </div>
-        </div>
-        
-        
-	<div class="module">
-            <button onclick="toggleContent(6)">Módulo 6: Promesa que es lo último de makemore (WaveNet)</button>
-            <div id="content-6" class="content">
-                <p>Implementamos WaveNet desde cero para descubrir el poder de las convoluciones. Estas operaciones nos permiten transformar las entradas del modelo de manera eficiente, algo crucial para poder entrenar modelos más grandes en tiempos razonables. Empezamos a hacer uso intensivo de las herramientas que proporciona PyTorch y nos ponemos a hacer gimnasia con las operaciones vectorizadas y el cálculo de dimensiones de entrada y salida de las capas. Este módulo insume unas 1,5 horas para ver la clase + 2,5 horas para resolver los ejercicios.
-		</p>
-            </div>
-        </div>
-
-	<div class="module">
-            <button onclick="toggleContent(7)">Módulo 7: Finalmente, implementando ChatGPT desde cero</button>
-            <div id="content-7" class="content">
-                <p>Te explicamos que es el Mecanismo de Atención y sus variantes (cross attention, self attention, multi-head attetion) y cómo se usa en los Transformers (encoders y decoders), la arquitectura en el corazón de ChatGPT y otros sistemas de Inteligencia Artificial Generativa. Introducimos formalmente el concepto de token. Combinamos todo y entrenamos nuestro primer GPT (Generative Pre-trained Transformer). Agregamos sal, pimienta, conexiones residuales, normalización por capas (Layer Normalization en lugar de Batch Normalization), Dropout y escalamos el modelo para que genere obras de teatro como si fuera José Hernandez. Este módulo insume unas 3,5 horas para ver las clases + 2,5 horas para resolver los ejercicios. Este módulo incluye un addendum que explica las diferencias entre un modelo fundacional, un modelo pre-entrenado, un modelo ajustado (fine-tuneado?) y un asistente y que pasos más son necesarios para llegar desde un modelo fundacional a un asistente.
-		</p>
-            </div>
-        </div>
-
-	<div class="module">
-            <button onclick="toggleContent(8)">Módulo 8: El tokenizer de ChatGPT</button>
-            <div id="content-8" class="content">
-                <p>Te mostramos que es, cómo funciona y cómo se implementa un Byte Pair Encoder (BPE) el generador de Tokens de ChatGPT-2. Cómo y porqué es necesario entrenarlo, cual es el impacto del tokenizador en el rendimiento del modelo de lenguaje. Implementamos y entrenamos uno. Analizamos las diferencias entre el tokenizer de ChatGPT-2 y el de ChatGPT-4 (si, 4). Introducimos a tiktoken, una librería para entrenar y trabajar con tokenizers. Vemos cómo usar tokenizers para codificar no solo texto sino imágenes y sonido e introducimos a los modelos multi-modales. Revisamos sentencepiece, el tokenizer de Llama2. Te mostramos por que a día de hoy, ChatGPT no puede generar nombres de personajes para novelas con exactamente 10 caracteres o contar cuantas letras 'm' hay en 'mi mamá me mima'. Este módulo insume unas 2,5 horas para ver las clases + 1,5 horas para resolver los ejercicios.
-		</p>
-            </div>
-        </div>
-
-	<div class="module">
-            <button onclick="toggleContent(9)">Módulo 9: Sorpresa!</button>
-            <div id="content-9" class="content">
-                <p>Un módulo con contenido sorpresa.</p>
-            </div>
-        </div>
-
-        <!-- Agrega más módulos según sea necesario -->
-
     </div>
 
+    <div class="temario">
+        <h2>Contenidos del Curso</h2>
+        <div class="module-container">
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 1: Autograd <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Te explicamos qué es y te mostramos cómo implementar un motor de cálculo de gradientes automático (MichiGrad) para entrenar redes neuronales en Python pelado (unas 200 líneas, con comentarios).</p>
+                        <p>Te explicamos qué es y cómo hacer Backpropagation a mano, y cómo automatizarlo. Refrescaremos algunos conceptos matemáticos básicos como los de función diferenciable, derivadas parciales y regla de la cadena.</p>
+                        <p>Introduciremos conceptos cómo descenso por gradientes y función de perdida (loss function).</p> 
+                        <p>Este módulo insume alrededor de 1,5 horas para ver la clase + otras 1,5 horas para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 2: MyNN <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Te guiamos para que implementes tu propia librería de Redes Neuronales (Neural Networks o NN) desde una simple neurona (Perceptron), pasando por una capa de neuronas (Layer) y finalmente varias capas de neuronas (Multi Layer Perceptron o MLP).</p> 
+                        <p>Además introducimos a las funciones de activación, en particular a la tangente hiperbólica (tanh) y la unidad lineal regularizada (Regularized Linear Unit o ReLU), entre otras.</p>
+                        <p>Este módulo insume unas 1,5 horas para ver la clase + 1 hora para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 3: Makemore y bi-gramas <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Te explicamos qué es un modelo auto-regresivo estadístico de bi-gramas y te enseñamos a implementar uno.</p> 
+                        <p>Estos modelos se asemejan mucho a los GPTs en cuanto a su forma de generar texto.</p>
+                        <p>Nos ayudará a introducir los conceptos de función logarítmica negativa de verosimilitud (Negative Log Likelihood) para medir la eficiencia de un modelo de lenguajes, logits, softmax, one-hot enconding. </p>
+                        <p>Algunas nociones de PyTorch para realizar operaciones de cálculo de gradientes en grafos de operaciones de manera vectorizada (como en PequeGrad, pero en serio y de manera eficiente). </p>
+                        <p>Además, re-implementaremos el modelo de bi-gramas con una red neuronal de una capa y veremos que este enfoque nos permite generalizar fácilmente a tri-gramas, cuatri-gramas y n-gramas.</p>
+                        <p>Este módulo insume unas 3,5 horas para ver las clases + 2 horas para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 4: Más makemore y MLPs <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Nos ponemos más serios respecto a los modelos de lenguajes e implementamos el modelo del paper "A Neural Probabilistic Language Model" de Bengio et al pero a nivel de caracteres en lugar de palabras.</p> 
+                        <p>Introducimos el concepto de Embeddings y nos adentramos más en las funcionalidades que ofrece PyTorch para trabajar con modelos de redes neuronales.</p>
+                        <p>Vamos a fondo con perceptrones multi capa y mostramos los principales problemas de entrenar redes neuronales con multiples capas. </p>
+                        <p>Vemos el concepto de taza de aprendizaje (Learning Rate) e hiperparámetros y justificamos la necesidad de dividir el conjunto datos en datos de entrenamiento, validación y pruebas (train/validation/test splitting).</p>
+                        <p>Este módulo insume unas 1,5 horas para ver la clase + 1 hora para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 5: Todavía más makemore (ResNet50) <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Introducimos el problema de la desaparición y la explosión de los gradientes en redes neuronales con multiples capas y su solución mediante técnicas especiales de inicialización de las matrices de peso (Kaiming Init) y más en general, mediante la implementación de normalización por lotes (Batch Normalization). 
+                        <p>Veremos en detalle cómo visualizar y detectar este problema mediante gráficos de saturación de neuronas.</p>
+                        <p>Además, aplicamos esto para entender cómo funciona la arquitectura de ResNet50, un modelo revolucionario en su momento, por el uso de residuos, por su profundidad (más de 50 capas) y cuyo entrenamiento sólo es posible mediante el uso de capas de normalización.</p> 
+                        <p>Este módulo insume unas 1,5 horas para ver la clase + 2,5 horas para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 6: Promesa que es lo último de makemore (WaveNet) <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Implementamos WaveNet desde cero para descubrir el poder de las convoluciones.</p>
+                        <p>Estas operaciones nos permiten transformar las entradas del modelo de manera eficiente, algo crucial para poder entrenar modelos más grandes en tiempos razonables.</p>
+                        <p>Empezamos a hacer uso intensivo de las herramientas que proporciona PyTorch y nos ponemos a hacer gimnasia con las operaciones vectorizadas y el cálculo de dimensiones de entrada y salida de las capas.</p> 
+                        <p>Este módulo insume unas 1,5 horas para ver la clase + 2,5 horas para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 7: Implementando ChatGPT desde cero <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Te explicamos qué es el Mecanismo de Atención y sus variantes (cross attention, self attention, multi-head attetion) y cómo se usa en los Transformers (encoders y decoders), la arquitectura en el corazón de ChatGPT y otros sistemas de Inteligencia Artificial Generativa.</p>
+                        <p>Introducimos formalmente el concepto de token. Combinamos todo y entrenamos nuestro primer GPT (Generative Pre-trained Transformer). </p> 
+                        <p>Agregamos sal, pimienta, conexiones residuales, normalización por capas (Layer Normalization en lugar de Batch Normalization), Dropout y escalamos el modelo para que genere obras de teatro como si fuera José Hernandez.</p>
+                        <p>Este módulo incluye un addendum que explica las diferencias entre un modelo fundacional, un modelo pre-entrenado, un modelo ajustado (fine-tuneado?) y un asistente y qué pasos más son necesarios para llegar desde un modelo fundacional a un asistente.</p>
+                        <p>Este módulo insume unas 3,5 horas para ver las clases + 2,5 horas para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 8: El tokenizer de ChatGPT <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Te mostramos qué es, cómo funciona y cómo se implementa un Byte Pair Encoder (BPE), el generador de Tokens de ChatGPT-2.</p>
+                        <p>Cómo y por qué es necesario entrenarlo, cuál es el impacto del tokenizador en el rendimiento del lenguaje. </p>
+                        <p>Implementamos y entrenamos uno. Analizamos las diferencias entre el tokenizer de ChatGPT-2 y el de ChatGPT-4 (si, 4). </p>
+                        <p>Introducimos a tiktoken, una librería para entrenar y trabajar con tokenizers.</p>
+                        <p>Vemos cómo usar tokenizers para codificar no sólo texto sino imágenes y sonido e introducimos a los modelos multi-modales.</p>
+                        <p>Revisamos sentencepiece, el tokenizer de Llama2.</p>
+                        <p>Te mostramos por qué a día de hoy, ChatGPT no puede generar nombres de personajes para novelas con exactamente 10 caracteres o contar cuantas letras 'm' hay en 'mi mamá me mima'. </p>
+                        <p>Este módulo insume unas 2,5 horas para ver las clases + 1,5 horas para resolver los ejercicios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="info-modulo">
+                    <div class="module-name" style="background-image: url('images/button_background.png');" onclick="toggleModulo(this)"> Módulo 9: Sorpresa! <span class="flecha">▼</span></div>
+                    <div class="module-description">
+                        <p>Sorpresa.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="curse-description">
+        <h2>Modalidad del curso</h2>
+        <p>
+            El curso consta de varios módulos, los cuales se desarrollan en clases grabadas en video, donde se implementa en código cada concepto explicado. Es una buena idea ir pausando los videos, copiando el código y haciendo las pruebas que creas necesarias hasta que entiendas lo que está pasando en profundidad.
+        </p>
+        <p>
+            Cada módulo estará acompañado por una serie de ejercicios para ir fijando los conocimientos. En general consisten en extender alguna parte del código o explorar alguna parte que queda fuera de las explicaciones.
+            
+            Además de los Jupyter Notebooks con código para probar todo lo implementado en el curso, ofrecemos la posibilidad de hacer 3 encuentros sincrónicos (por videoconferencia) al finalizar los módulos 3, 6 y 9 para que puedas hacerles consultas a nuestros profes.
+        </p>
+        <p>
+            Los requisitos mínimos para el curso son conocimientos de programación, algorítmica básica (con que entiendas la diferencia entre un for y un while y entre una clase, un objeto y una función, alcanza), Python (si usas environments tipo venv o conda, genial!) por que aprender sobre la marcha va a hacerte todo cuesta arriba, nociones de cálculo y análisis matemático de primer año de la universidad o del último año de la escuela técnica (funciones, derivadas, matrices, sistemas de coordenadas) y algunas nociones de  probabilidades y estadística (distribuciones de probabilidad, probabilidad de un evento). Podés tomar un <a href="https://forms.gle/WB1yTfCtLng9JXur5">autotest nivelatorio</a> para que puedas identificar aquellas áreas que pueden presentarte problemas y probablemente necesites reforzar para sacarle más partido al curso.
+        </p>
+        <p>
+            Podés rellenar <a href="https://forms.gle/g5ZneDZrkAFgbWu66">este formulario</a> para recibir más noticias y enterarte de la inscripción y el comienzo del curso. Los cupos serán limitados, pero si querés ingresar a la lista de espera contestá las preguntas y enviá el formulario cuanto antes.
+        </p>
+       
+    </div>
+
+    <footer>
+        <div class="footer-content">
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/company/purrfect-ai" target="_blank">
+                        <img src="images/logo_linkedin_n.png" alt="LinkedIn" class="social-media-logo">
+                    </a>
+                    <a href="https://discord.gg/YQTX6bghEa" target="_blank">
+                        <img src="images/logo_discord_n.png" alt="Discord" class="social-media-logo">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <footer>
+        <div>Nuestra página web es una porquería, nuestro curso no. Si haces diseño web y tenes una idea de como mejorar nuestra página, contactanos. Estamos contratando.</div>
+    </footer>
+    
     <script>
-        function toggleContent(id) {
-            const content = document.getElementById(`content-${id}`);
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        function toggleModulo(element) {
+            let descripcion = element.nextElementSibling;
+            let flecha = element.querySelector('.flecha');
+            if (descripcion.style.display === "block") {
+                descripcion.style.display = "none";
+                flecha.textContent = "▼";
+            } else {
+                descripcion.style.display = "block";
+                flecha.textContent = "▲";
+            }
         }
     </script>
+
 </body>
 </html>
